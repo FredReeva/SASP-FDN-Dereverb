@@ -32,21 +32,21 @@ res_ah=Resample(Fs,sampF_ah,ah);
 res_sh=Resample(Fs,sampF_sh,sh);
 %% CODE
 load("h.mat");
-%[h,beta_hat]=rir_generator(340,16000,recv_coord,src_coord,room_dim,rev_time); %CALCULATING IMPULSE RESPONSE
-n=[0:length(h)-1];
+%[h,beta_hat]=rir_generator(340,Fs,recv_coord,src_coord,room_dim,rev_time); %CALCULATING IMPULSE RESPONSE
+n=0:length(h)-1;
 
 
 
 %rev_sinusoid=conv(sinusoid,h);
-rev_sinusoid=OLAConv(window,sinusoid,h,R);
+%rev_sinusoid=OLAConv(window,sinusoid,h,R);
 x_rev_sinusoid=[0:length(rev_sinusoid)-1];
 
 %rev_ah=conv(res_ah,h);
-rev_ah=OLAConv(window,res_ah,h,R);
+%rev_ah=OLAConv(window,res_ah,h,R);
 x_rev_ah=0:length(rev_ah)-1;
 
 %rev_sh=conv(res_sh,h);
-rev_sh=OLAConv(window,res_sh,h,R);
+%rev_sh=OLAConv(window,res_sh,h,R);
 x_rev_sh= 0:length(rev_sh)-1;
 
 
