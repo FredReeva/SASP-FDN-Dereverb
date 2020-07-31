@@ -43,11 +43,11 @@ x_rev_sinusoid=[0:length(rev_sinusoid)-1];
 
 %rev_ah=conv(res_ah,h);
 rev_ah=OLAConv(window,res_ah,h,R);
-x_rev_ah=[0:length(rev_ah)-1];
+x_rev_ah=0:length(rev_ah)-1;
 
 %rev_sh=conv(res_sh,h);
 rev_sh=OLAConv(window,res_sh,h,R);
-x_rev_sh=[0:length(rev_sh)-1];
+x_rev_sh= 0:length(rev_sh)-1;
 
 
 figure(1)
@@ -69,7 +69,7 @@ plot(x_rev_sinusoid,rev_sinusoid)
 subplot(7,1,4)
 title("Ah")
 xlabel("n samples")
-plot([0:length(res_ah)-1],res_ah)
+plot(0:length(res_ah)-1,res_ah)
 
 subplot(7,1,5)
 title("Reverberated Ah")
@@ -79,7 +79,7 @@ plot(x_rev_ah,rev_ah)
 subplot(7,1,6)
 title("Sh")
 xlabel("n samples")
-plot([0:length(res_sh)-1],res_sh)
+plot(0:length(res_sh)-1,res_sh)
 
 subplot(7,1,7)
 title("Reverberated Sh")
