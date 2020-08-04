@@ -37,15 +37,15 @@ n=0:length(h)-1;
 
 
 
-%rev_sinusoid=conv(sinusoid,h);
+rev_sinusoid=conv(sinusoid,h);
 %rev_sinusoid=OLAConv(window,sinusoid,h,R);
 x_rev_sinusoid=[0:length(rev_sinusoid)-1];
 
-%rev_ah=conv(res_ah,h);
+rev_ah=conv(res_ah,h);
 %rev_ah=OLAConv(window,res_ah,h,R);
 x_rev_ah=0:length(rev_ah)-1;
 
-%rev_sh=conv(res_sh,h);
+rev_sh=conv(res_sh,h);
 %rev_sh=OLAConv(window,res_sh,h,R);
 x_rev_sh= 0:length(rev_sh)-1;
 
@@ -87,7 +87,7 @@ xlabel("n samples")
 plot(x_rev_sh,rev_sh)
 
 
-
+audiowrite("sh.wav",rev_sh,Fs);
 
 
 
@@ -149,3 +149,5 @@ function res_signal=Resample(target_Fs, Fs, signal)
         [P,Q]=rat(target_Fs/Fs);
         res_signal=resample(signal,P,Q);
 end
+
+
