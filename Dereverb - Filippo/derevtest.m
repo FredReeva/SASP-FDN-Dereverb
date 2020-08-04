@@ -34,3 +34,9 @@ derev_signal=conv(signal,h_dereverb_mp);
 derev_signal=conv(derev_signal,h_dereverb_ap);
 
 sound(real(derev_signal),Fs);
+
+figure()
+subplot(1,2,1)
+plot(signal)
+subplot(1,2,2)
+plot(real(derev_signal))
