@@ -1,5 +1,5 @@
 # SASP Project
-## Part 1 - FDN reverberation
-Feedback delay network reverberation
-## Part 2 - Dereverberation
+## Part 1 - Dereverberation
 Cepstrum-based dereverberation
+## Part 2 - FDN reverberation
+Feedback delay network reverberation
